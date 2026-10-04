@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 export class App {
   busca = '';
 
-filmes = [
+  filmes = [
     {
       id: 1,
       titulo: 'Interestelar',
@@ -32,7 +32,7 @@ filmes = [
     {
       id: 3,
       titulo: 'Homem-Aranha',
-      capa: 'assets/miranha.png',  
+      capa: 'assets/miranha.png',
       genero: 'Ação',
       nota: 8.2,
       assistido: true,
@@ -41,7 +41,7 @@ filmes = [
     {
       id: 4,
       titulo: 'Homem-Aranha longe de casa',
-      capa: 'assets/miranha_longe_casa.png', 
+      capa: 'assets/miranha_longe_casa.png',
       genero: 'Ação',
       nota: 8.2,
       assistido: true,
@@ -76,19 +76,23 @@ filmes = [
     }
   ];
 
-
   get filmesExibidos() {
+    const termoBusca = (this.busca ?? '').trim().toLowerCase();
 
-  // Se não estiver pesquisando,
-  // mostra somente os filmes principais
-  if (this.busca.trim() === '') {
-    return this.filmes.filter(filme => filme.destaque);
+    // Se não estiver pesquisando,
+    // mostra somente os filmes principais
+    if (!termoBusca) {
+      return this.filmes.filter(filme => filme.destaque);
+    }
+
+    // Se estiver pesquisando,
+    // procura pelo título
+    return this.filmes.filter(filme =>
+      filme.titulo.toLowerCase().includes(termoBusca)
+    );
   }
 
-  // Se estiver pesquisando,
-  // procura pelo título
-  return this.filmes.filter(filme =>
-    filme.titulo.toLowerCase().includes(this.busca.toLowerCase())
-  );
-}
+  alternarAssistido(filme: any) {
+    filme.assistido = !filme.assistido;
+  }
 }
