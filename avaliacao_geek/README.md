@@ -1,59 +1,156 @@
-# AvaliacaoGeek
+# 🎬 Avaliação Geek
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.6.
+Aplicação web desenvolvida com **Angular** para praticar conceitos fundamentais de desenvolvimento Front-End, utilizando uma galeria de filmes com pesquisa, informações dinâmicas e controle de status de visualização.
 
-## Development server
+O projeto foi desenvolvido como atividade prática para exercitar **interpolação, property binding, event binding, two-way binding, estruturas de controle do Angular e manipulação de dados no TypeScript**.
 
-To start a local development server, run:
+## ✨ Funcionalidades
+
+- 🎞️ Exibição de filmes em formato de cards
+- 🖼️ Exibição dinâmica das capas dos filmes
+- 🏷️ Exibição de título, gênero e nota
+- 🔎 Pesquisa de filmes pelo título
+- 👁️ Filtro de filmes em destaque quando não há pesquisa
+- ✅ Alternância entre "Assistido" e "Marcar como assistido"
+- 🔄 Atualização dinâmica dos dados exibidos na interface
+- 📱 Interface estilizada com CSS
+
+## 🧠 Conceitos praticados
+
+### Interpolação
+
+Utilização de `{{ }}` para exibir informações do objeto diretamente no HTML, como título, gênero e nota.
+
+### Property Binding
+
+Utilização de bindings como `[src]` e `[alt]` para definir propriedades dos elementos HTML de acordo com os dados do filme.
+
+### Event Binding
+
+Utilização de `(click)` para executar uma função no TypeScript e alterar o status de visualização do filme.
+
+### Two-way Binding
+
+Utilização de `[(ngModel)]` para manter o campo de pesquisa sincronizado com a variável `busca`.
+
+### Renderização com @for e @if
+
+O projeto utiliza a sintaxe moderna do Angular para:
+
+- Percorrer a lista de filmes com `@for`
+- Alterar o conteúdo do botão com `@if`
+
+### Pesquisa e filtragem
+
+A aplicação possui um getter chamado `filmesExibidos`, responsável por determinar quais filmes serão apresentados.
+
+Quando não existe uma pesquisa, são exibidos somente os filmes marcados como destaque. Quando o usuário pesquisa, a aplicação filtra os filmes pelo título.
+
+## 🛠️ Tecnologias utilizadas
+
+- **Angular 22**
+- **TypeScript**
+- **HTML5**
+- **CSS3**
+- **Angular Forms**
+- **RxJS**
+- **Node.js / npm**
+- **Vitest**
+
+## 📂 Estrutura principal
+
+```
+avaliacao_geek/
+├── public/
+├── src/
+│   ├── app/
+│   │   ├── app.ts
+│   │   ├── app.html
+│   │   ├── app.css
+│   │   ├── app.config.ts
+│   │   └── app.routes.ts
+│   ├── index.html
+│   ├── main.ts
+│   ├── main.server.ts
+│   ├── server.ts
+│   └── styles.css
+├── angular.json
+├── package.json
+├── tsconfig.json
+└── README.md
+```
+
+## 🚀 Como executar
+
+### 1. Pré-requisitos
+
+Tenha instalado:
+
+- **Node.js**
+- **npm**
+
+### 2. Instalar as dependências
+
+Dentro da pasta do projeto:
+
+```bash
+npm install
+```
+
+### 3. Iniciar o servidor
+
+```bash
+npm start
+```
+
+Ou:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Depois, acesse:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+http://localhost:4200/
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🔨 Build
+
+Para gerar a versão de produção:
 
 ```bash
-ng generate --help
+npm run build
 ```
 
-## Building
+Os arquivos gerados ficarão na pasta `dist/`.
 
-To build the project run:
+## 🧪 Testes
+
+Para executar os testes configurados com Vitest:
 
 ```bash
-ng build
+npm test
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 🎯 Objetivo do projeto
 
-## Running unit tests
+O objetivo principal é consolidar conhecimentos de **Angular e desenvolvimento Front-End**, trabalhando com dados dinâmicos, componentes, bindings, eventos, formulários e filtros.
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Além de servir como atividade acadêmica, o projeto faz parte da prática de construção de aplicações web utilizando tecnologias modernas do ecossistema JavaScript.
 
-```bash
-ng test
-```
+## 📌 Próximas melhorias
 
-## Running end-to-end tests
+Algumas funcionalidades que podem ser adicionadas futuramente:
 
-For end-to-end (e2e) testing, run:
+- ⭐ Sistema de avaliação pelo usuário
+- 🎭 Filtro por gênero
+- 🔃 Ordenação por nota
+- ➕ Cadastro de novos filmes pela interface
+- 💾 Persistência dos dados
+- 📱 Melhorias de responsividade
+- 🎨 Evolução do design da interface
 
-```bash
-ng e2e
-```
+---
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**Projeto desenvolvido por Vinicius Cristiano Budack dos Santos.**
